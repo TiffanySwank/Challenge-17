@@ -22,11 +22,17 @@ THEN I find a section about the author and a link to the author’s GitHub profi
 
 
 # Example Regex 
-^https?://(www\.)?example\.com$
+\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}\b
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+\b: Asserts a word boundary to ensure that we match complete email addresses.
+[A-Za-z0-9._%+-]+: Matches one or more alphanumeric characters, dots, underscores, percent signs, plus signs, or hyphens for the local part of the email address.
+@: Matches the "@" symbol, which separates the local part from the domain part.
+[A-Za-z0-9.-]+: Matches one or more alphanumeric characters, dots, or hyphens for the domain name.
+\.: Matches the dot (.) that separates the domain name from the top-level domain (TLD).
+[A-Za-z]{2,}: Matches at least two or more alphabetic characters for the TLD. You can adjust the {2,} to match longer TLDs.
+\b: Asserts another word boundary to complete the match.
 
 ## Table of Contents
 
